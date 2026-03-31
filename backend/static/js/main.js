@@ -81,7 +81,7 @@ function setupLoginForm() {
         .catch(error => {
             hideLoading();
             console.error('登录失败:', error);
-            alert('登录失败，请检查网络连接');
+            alert(`登录失败：${error.message || '请检查网络连接'}\n\n请确保后端服务器已启动：\ncd d:/2026-03-31_AITeacher/backend\npython app.py`);
         });
     });
     

@@ -21,17 +21,22 @@ wheels/
 *.egg
 
 # Flask
-flask_session/
 instance/
 .webassets-cache
+
+# Session
+flask_session/
 
 # Database
 *.db
 *.db-journal
-data/
 
-# Environment variables
+# Environment
 .env
+.venv
+env/
+venv/
+ENV/
 
 # IDE
 .vscode/

@@ -9,13 +9,16 @@ class Config:
     # Flask配置
     SECRET_KEY = os.getenv('SECRET_KEY', 'dev-secret-key-change-in-production')
     
-    # Session配置
-    SESSION_TYPE = 'filesystem'
-    SESSION_PERMANENT = False
-    SESSION_USE_SIGNER = True
-    SESSION_KEY_PREFIX = 'aiteacher:'
-    SESSION_FILE_DIR = os.path.join(os.path.dirname(__file__), 'flask_session')
+    # Session配置（使用client-side cookie）
+    SESSION_TYPE = 'null'  # 使用Flask默认的client-side session
+    SESSION_COOKIE_NAME = 'aiteacher_session'
+    SESSION_COOKIE_SECURE = False
+    SESSION_COOKIE_HTTPONLY = True
+    SESSION_COOKIE_SAMESITE = 'Lax'
     PERMANENT_SESSION_LIFETIME = 7200  # 2小时
+
+    # 如果需要server-side session，使用Redis
+    # SESSION_TYPE = 'redis'  # 需要安装Redis
     
     # 数据库配置
     BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))

@@ -1,0 +1,21 @@
+# .gitignore
+
+# Operating System Files
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# IDE Files
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# WorkBuddy Files
+.workbuddy/
+
+# Temporary Files
+*.tmp
+*.temp
+*.log

@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>学习进度 - AI Teacher</title>
+    <link rel="stylesheet" href="static/css/style.css">
+</head>
+<body>
+    <div id="app">
+        <!-- 导航栏 -->
+        <nav class="navbar">
+            <div class="container">
+                <a href="index.html" class="logo">AI Teacher</a>
+                <div id="user-info" class="user-info"></div>
+            </div>
+        </nav>
+        
+        <!-- 主内容区 -->
+        <div class="container main-content">
+            <h1>学习进度</h1>
+            
+            <!-- 总体统计 -->
+            <div class="progress-overview">
+                <div class="progress-card">
+                    <div class="progress-number" id="total-courses">0</div>
+                    <div class="progress-label">总课程数</div>
+                </div>
+                <div class="progress-card">
+                    <div class="progress-number" id="completed-courses">0</div>
+                    <div class="progress-label">已完成</div>
+                </div>
+                <div class="progress-card highlight">
+                    <div class="progress-number" id="completion-rate">0%</div>
+                    <div class="progress-label">完成率</div>
+                </div>
+            </div>
+            
+            <!-- 完成率提示 -->
+            <div id="completion-notice" class="notice-card" style="display: none;">
+                <p id="completion-notice-text"></p>
+            </div>
+            
+            <!-- 错题本 -->
+            <h2>错题本</h2>
+            <div id="wrong-answers-list" class="wrong-answers-list">
+                <!-- 错题将通过JavaScript动态加载 -->
+            </div>
+            
+            <div class="action-buttons">
+                <a href="index.html" class="btn btn-secondary">返回课程列表</a>
+            </div>
+        </div>
+        
+        <!-- 加载中提示 -->
+        <div id="loading" class="loading" style="display: none;">
+            <div class="spinner"></div>
+            <p>加载中...</p>
+        </div>
+    </div>
+    
+    <script src="static/js/progress.js"></script>
+</body>
+</html>

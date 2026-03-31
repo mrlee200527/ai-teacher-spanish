@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>课程学习 - AI Teacher</title>
+    <link rel="stylesheet" href="static/css/style.css">
+</head>
+<body>
+    <div id="app">
+        <!-- 导航栏 -->
+        <nav class="navbar">
+            <div class="container">
+                <a href="index.html" class="logo">AI Teacher</a>
+                <div id="user-info" class="user-info"></div>
+            </div>
+        </nav>
+        
+        <!-- 主内容区 -->
+        <div class="container main-content">
+            <div id="course-loading" class="loading">
+                <div class="spinner"></div>
+                <p>加载课程内容...</p>
+            </div>
+            
+            <div id="course-content" class="course-content" style="display: none;">
+                <!-- 课程头部 -->
+                <div class="course-header">
+                    <h1 id="course-title"></h1>
+                    <p id="course-description" class="course-description"></p>
+                    <div class="course-meta">
+                        <span id="course-meta"></span>
+                    </div>
+                </div>
+                
+                <!-- 课文内容 -->
+                <div class="lesson-content">
+                    <h2>课文内容</h2>
+                    <div id="lesson-text" class="lesson-text"></div>
+                </div>
+                
+                <!-- 练习题 -->
+                <div class="exercises-section">
+                    <h2>练习题</h2>
+                    <div id="exercises-list" class="exercises-list">
+                        <!-- 练习题将通过JavaScript动态加载 -->
+                    </div>
+                </div>
+                
+                <!-- 完成按钮 -->
+                <div class="completion-action">
+                    <button id="complete-btn" class="btn btn-success" disabled>标记为已完成</button>
+                    <a href="index.html" class="btn btn-secondary">返回课程列表</a>
+                </div>
+            </div>
+        </div>
+        
+        <!-- 加载中提示 -->
+        <div id="loading-overlay" class="loading-overlay" style="display: none;">
+            <div class="spinner"></div>
+            <p id="loading-text">处理中...</p>
+        </div>
+    </div>
+    
+    <script src="static/js/course.js"></script>
+</body>
+</html>

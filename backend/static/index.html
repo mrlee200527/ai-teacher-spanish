@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI Teacher - 西班牙语学习系统</title>
+    <link rel="stylesheet" href="static/css/style.css">
+</head>
+<body>
+    <div id="app">
+        <!-- 导航栏 -->
+        <nav class="navbar">
+            <div class="container">
+                <h1 class="logo">AI Teacher</h1>
+                <div id="user-info" class="user-info"></div>
+            </div>
+        </nav>
+        
+        <!-- 主内容区 -->
+        <div class="container main-content">
+            <!-- 未登录状态 -->
+            <div id="login-section" class="login-section">
+                <div class="login-box">
+                    <h2>欢迎使用 AI Teacher</h2>
+                    <p class="subtitle">西班牙语学习助手 - 零基础到A2</p>
+                    
+                    <form id="login-form" class="login-form">
+                        <div class="form-group">
+                            <label for="username">用户名</label>
+                            <input type="text" id="username" name="username" required
+                                   placeholder="请输入用户名">
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="api-key">小米大模型 API 密钥</label>
+                            <input type="password" id="api-key" name="api-key" required
+                                   placeholder="请输入你的小米大模型API密钥">
+                            <p class="hint">密钥将存储在Session中，不会保存在服务器</p>
+                        </div>
+                        
+                        <button type="submit" class="btn btn-primary">登录</button>
+                    </form>
+                </div>
+            </div>
+            
+            <!-- 已登录状态 -->
+            <div id="course-section" class="course-section" style="display: none;">
+                <div class="welcome-banner">
+                    <h2>欢迎回来，<span id="username-display"></span>！</h2>
+                    <p>继续你的西班牙语学习之旅</p>
+                </div>
+                
+                <div class="progress-overview">
+                    <div class="progress-card">
+                        <div class="progress-number" id="total-courses">0</div>
+                        <div class="progress-label">总课程数</div>
+                    </div>
+                    <div class="progress-card">
+                        <div class="progress-number" id="completed-courses">0</div>
+                        <div class="progress-label">已完成</div>
+                    </div>
+                    <div class="progress-card">
+                        <div class="progress-number" id="completion-rate">0%</div>
+                        <div class="progress-label">完成率</div>
+                    </div>
+                </div>
+                
+                <h3>课程列表</h3>
+                <div id="course-list" class="course-list">
+                    <!-- 课程列表将通过JavaScript动态加载 -->
+                </div>
+                
+                <div class="action-buttons">
+                    <a href="progress.html" class="btn btn-secondary">查看详细进度</a>
+                    <button id="logout-btn" class="btn btn-outline">退出登录</button>
+                </div>
+            </div>
+        </div>
+        
+        <!-- 加载中提示 -->
+        <div id="loading" class="loading" style="display: none;">
+            <div class="spinner"></div>
+            <p>加载中...</p>
+        </div>
+    </div>
+    
+    <script src="static/js/main.js"></script>
+</body>
+</html>
